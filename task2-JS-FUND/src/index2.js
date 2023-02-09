@@ -1,7 +1,4 @@
 "strict-mode";
-import uniqueFieldsSet from "./scraping-unique-fields.js";
-
-const SYMBOL_FOR_MISSING_DATA = "NaN";
 
 const jsonArea = document.querySelector("#json");
 const csvArea = document.querySelector("#csv");
@@ -36,20 +33,8 @@ const convertToCSV = () => {
     clearErrorMsg();
   }
 
-  const uniqueFieldsArr = [...uniqueFieldsSet(validatedJSON)];
-  let csv = uniqueFieldsArr.toString();
-
-  for (let obj of validatedJSON) {
-    let objArr = [];
-
-    for (let header of uniqueFieldsArr) {
-      obj[header]
-        ? objArr.push(obj[header])
-        : objArr.push(SYMBOL_FOR_MISSING_DATA);
-    }
-    csv += `\n${objArr.toString()}`;
-  }
-  csvArea.value = csv;
+  const array = [Object.keys(validatedJSON[0])].concat(validatedJSON);
+  csvArea.value = array.map((row) => Object.values(row).toString()).join("\n");
 };
 const clearData = () => {
   clearErrorMsg();
