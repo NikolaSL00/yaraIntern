@@ -1,0 +1,219 @@
+/* content container */
+.content-container {
+    background-color: #eaeff3;
+    width: 72.5%;
+    height: 100%;
+}
+.bolded {
+    font-weight: bold;
+}
+
+.main-content-row {
+    margin: 2.25rem 1.25rem 1.25rem 2.25rem;
+}
+.upper-content-row {
+    margin-bottom: 1.75rem;
+}
+.bottom-content-row {
+    border-bottom: 1px solid #e0e4eb;
+}
+
+/* first row */
+#content-first-header {
+    margin-bottom: 0.6rem;
+}
+.flex-row-content {
+    display: flex;
+    flex-direction: row;
+}
+.option-button {
+    background-color: white;
+    color: #6e99cb;
+    width: 130px;
+    height: 30px;
+    border: 2px solid #f1f1f2;
+    font-size: small;
+}
+.right-margin {
+    margin-right: 0.5rem;
+}
+.selected-button {
+    background-color: #41734d;
+    color: white;
+    border: none;
+}
+#div-nutrients {
+    gap: 1rem;
+}
+.small-text {
+    font-size: small;
+}
+.nutrient-elements-container {
+    display: flex;
+    flex-direction: column;
+}
+.nutrient-button {
+    width: 100px;
+    height: 110px;
+    border: 1px solid #6e99cb;
+}
+.subtitle {
+    font-size: small;
+    padding: 0 0;
+    margin: 0 0;
+}
+#nutrient-buttons-container {
+    gap: 0.5rem;
+}
+.main-button-title {
+    font-size: xx-large;
+}
+.gray {
+    color: gray;
+}
+.bgc-white {
+    background-color: white;
+}
+.no-border {
+    border: none;
+}
+.copy-to-button {
+    width: 140px;
+    height: 35px;
+    background-color: white;
+    border: 1px solid #6e99cb;
+    font-weight: bold;
+}
+.flex-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* table row */
+.table-container {
+    background-color: white;
+    padding: 2rem 0.75rem 0.1rem 0.75rem;
+
+    overflow-x: hidden;
+}
+.flex-center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#right-arrow {
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+}
+#table-header {
+    margin-right: 0.25rem;
+}
+#default-text {
+    color: #454b5f;
+}
+th,
+td {
+    width: 175px;
+    height: 41.5px;
+    border: 0.2px solid white;
+    padding: 0 10px 0 10px;
+
+    text-align: left;
+    font-weight: 300;
+    font-size: smaller;
+
+    vertical-align: middle;
+
+    /* overflow: hidden; */
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+tr {
+    line-height: 0;
+    height: 41.5px;
+}
+
+th {
+    background-color: #346eb6;
+    color: white;
+}
+.even {
+    background-color: #f4f6f9;
+}
+
+.selected-default {
+    color: #a7abb6;
+}
+
+.checkbox-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.selected-checkbox {
+    -webkit-appearance: none; /*hides the default checkbox*/
+    height: 13px;
+    width: 13px;
+    background-color: #fe0006;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 600;
+    color: #0e9700;
+    border: 1px solid gray;
+    /* outline: none; */
+}
+
+.selected-checkbox:checked {
+    background-color: white;
+}
+
+.selected-checkbox:checked:before {
+    content: '✔';
+}
+
+.selected-checkbox:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.table {
+    border-bottom: 0.5px solid #a7abb6;
+}
+
+.add-row {
+    padding-left: 0.5rem;
+    color: #d9e7f8;
+}
+
+.opacity {
+    color: transparent;
+    text-shadow: 0 0 2px gray;
+    opacity: 0.7;
+    font-weight: 400;
+    font-size: small;
+}
+.img-arrow-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+ /* on closed arrow up*/
+details summary > div > div:first-child > img:first-child  {
+    display: block;
+}
+details[open] summary > div > div:first-child > img:first-child  {
+    display: none;
+}
+
+/* on open arrow down */
+details summary > div > div:first-child > img:nth-child(2)  {
+    display: none;
+}
+details[open] summary > div > div:first-child > img:nth-child(2)  {
+    display: block;
+}

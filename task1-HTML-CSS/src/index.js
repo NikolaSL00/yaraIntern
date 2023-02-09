@@ -1,0 +1,5 @@
+import '../public/styles/style.css'
+import '../public/styles/left-side-menu.css'
+import '../public/styles/topbar.css'
+import '../public/styles/context-menu.css'
+import '../public/styles/main-content.css'

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <img class="logo" src="/public/images/logo-logo.png" alt="" />
+        </div>
+        <div>
+          <label class="textarea-label">JSON to CSV converter</label>
+        </div>
+        <div>
+          <img
+            class="logo clickable"
+            src="../public/images/donate-logo.jpg"
+            alt=""
+          />
+        </div>
+      </header>
+
+      <div id="main-container">
+        <div class="textarea-container">
+          <label class="textarea-label" for="JSON">JSON</label>
+          <textarea
+            class="textarea"
+            name="JSON"
+            id="json"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+
+        <div id="controls-container">
+          <label id="error"></label>
+          <button class="btn" id="convert">Convert</button>
+          <button class="btn" id="format">Format</button>
+          <button class="btn" id="clear">Clear</button>
+          <label for=""></label>
+        </div>
+
+        <div class="textarea-container">
+          <label class="textarea-label" for="CSV">CSV</label>
+          <textarea
+            readonly
+            class="textarea"
+            name="CSV"
+            id="csv"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
+
+      <footer>
+        <div class="col">
+          <ul class="clickable">
+            <li>About us</li>
+            <li>Our Mission</li>
+            <li>Services</li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <ul class="clickable">
+            <li>+91 9051 XXXXXX</li>
+            <li>033 2464 XXXX</li>
+            <li>abc@gmail.com</li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
