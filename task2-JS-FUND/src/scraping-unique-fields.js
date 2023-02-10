@@ -29,7 +29,7 @@
 //   },
 // ];
 
-export default function uniqueFieldsSet(jsonArr) {
+export default function uniqueKeysSet(jsonArr) {
   const uniqueHeaders = new Set();
 
   for (let obj of jsonArr) {
