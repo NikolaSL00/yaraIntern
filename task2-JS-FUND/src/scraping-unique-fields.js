@@ -33,10 +33,8 @@ export default function uniqueKeysSet(jsonArr) {
   const uniqueHeaders = new Set();
 
   for (let obj of jsonArr) {
-    for (const [key, _] of Object.entries(obj)) {
-      uniqueHeaders.add(key);
-    }
+    // for (const key of Object.keys(obj)) uniqueHeaders.add(key);
+    Object.keys(obj).map((el) => uniqueHeaders.add(el));
   }
-
   return uniqueHeaders;
 }
