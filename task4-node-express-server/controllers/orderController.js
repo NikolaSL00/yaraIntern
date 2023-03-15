@@ -49,6 +49,7 @@ router.get("/:id/qty", async (req, res) => {
         id: Number(req.params.id),
       },
     });
+
     const middleTableRows = await order_products.findAll({
       raw: true,
       nest: true,
