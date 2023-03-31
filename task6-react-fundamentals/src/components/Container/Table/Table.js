@@ -39,9 +39,9 @@ const Table = () => {
     }));
   };
   const changeHandler = (e) => {
-    setErrors((errors) => ({
-      ...errors,
-    }));
+    // setErrors((errors) => ({
+    //   ...errors,
+    // }));
 
     setValues((values) => ({
       ...values,
