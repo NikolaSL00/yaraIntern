@@ -1,5 +1,5 @@
 import { StyleSheet, ScrollView } from 'react-native';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import useRollDices from '../../hooks/useRollDices';
 
 import Container from '../../components/Container';
@@ -11,16 +11,27 @@ import Controls from '../../components/Controls';
 import { Context as DiceContext } from '../../context/DiceContext';
 
 const RollingDiceScreen = () => {
-  const { state, updateHighestResult, updateNumRolls, updateCurrentScore } =
-    useContext(DiceContext);
+  const {
+    state,
+    updateHighestResult,
+    incrementRolls,
+    updateCurrentScore,
+    resetResults,
+  } = useContext(DiceContext);
+
+  const [dices, rollDice, resetDice] = useRollDices();
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [dices, rollDices] = useRollDices(new Array(state.numDices).fill('#'));
+
+  useEffect(() => {
+    resetDice();
+    resetResults();
+  }, [state.numDices, state.sides]);
 
   const handleOnRollPress = () => {
-    const currentScore = rollDices();
+    const currentScore = rollDice();
     updateCurrentScore(currentScore);
-    updateNumRolls();
+    incrementRolls();
 
     if (state.highestResult < currentScore) {
       updateHighestResult(currentScore);

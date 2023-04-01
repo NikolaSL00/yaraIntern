@@ -1,5 +1,6 @@
 import createDataContext from '../createDataContext';
 
+const RESET_RESULTS = 'reset';
 const CHANGE_DICES_NUMBER = 'change_dices_number';
 const CHANGE_DICES_SIDES = 'change_dice_sides';
 const UPDATE_HIGHEST_RESULT = 'update_highest_result';
@@ -8,6 +9,8 @@ const ROLL = 'roll';
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case RESET_RESULTS:
+      return { ...state, currentScore: 0, rolls: 0, highestResult: 0 };
     case CHANGE_DICES_NUMBER:
       return {
         ...state,
@@ -45,12 +48,15 @@ const updateHighestResult = (dispatch) => {
   return (newHighScore) =>
     dispatch({ type: UPDATE_HIGHEST_RESULT, payload: newHighScore });
 };
-const updateNumRolls = (dispatch) => {
+const incrementRolls = (dispatch) => {
   return () => dispatch({ type: ROLL });
 };
-updateCurrentScore = (dispatch) => {
+const updateCurrentScore = (dispatch) => {
   return (currentScore) =>
     dispatch({ type: UPDATE_CURRENT_RESULT, payload: currentScore });
+};
+const resetResults = (dispatch) => {
+  return () => dispatch({ type: RESET_RESULTS });
 };
 
 export const { Context, Provider } = createDataContext(
@@ -59,10 +65,12 @@ export const { Context, Provider } = createDataContext(
     changeDicesNumber,
     changeDicesSides,
     updateHighestResult,
-    updateNumRolls,
+    incrementRolls,
     updateCurrentScore,
+    resetResults,
   },
   {
+    // dices:[],
     currentScore: 0,
     rolls: 0,
     highestResult: 0,
