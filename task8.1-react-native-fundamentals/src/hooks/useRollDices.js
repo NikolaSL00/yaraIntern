@@ -2,7 +2,9 @@ import { useContext, useState } from 'react';
 
 import { Context as DiceContext } from '../context/DiceContext';
 
-const FILLER = '#';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+const FILLER = <MaterialCommunityIcons name="clover" size={30} color="green" />;
 
 const useRollDices = () => {
   const {

@@ -11,6 +11,7 @@ const Container = ({ style, children, ...props }) => {
 
 const styles = StyleSheet.create({
   container: {
+    height: 'auto',
     backgroundColor: 'black',
     flex: 1,
   },
